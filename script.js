@@ -103,7 +103,7 @@ happy birthday to the sweetest person ever <333
 thank u for being part of my life
 thank u for sticking around all this time
 thank u for growing well
-thank u for everthing..
+thank u for everything..
   
 makasih udah jadi diri kamu yang sekarang.
 i'm so proud of you, more than you know.
