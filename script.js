@@ -135,52 +135,56 @@ scroll ke bawah ya sayangg...
 
 const letterCard=document.querySelector(".letter-card");
 
+function typeLetter() {
 
-function typeLetter(){
-let i=0;
-typingText.innerHTML="";
-letterFinished=false;
+    let i = 0;
+    typingText.innerHTML = "";
+    letterFinished = false;
 
-function typing(){
+    function typing() {
 
-if(i<message.length){
+        if (i >= message.length) {
 
-typingText.innerHTML+=message.charAt(i);
-i++;
+            letterFinished = true;
 
-requestAnimationFrame(()=>{
-letterCard.scrollTop=letterCard.scrollHeight;
-setTimeout(typing,70);
-});
+            if (scrollGuide) {
 
-}else{
+                scrollGuide.classList.add("show");
 
-letterFinished=true;
+                scrollGuide.onclick = () => {
 
-if(scrollGuide){
+                    allowNextSection = true;
 
-scrollGuide.classList.add("show");
+                    document.querySelector(".gallery-section").scrollIntoView({
+                        behavior: "smooth"
+                    });
 
-scrollGuide.onclick=()=>{
+                };
 
-allowNextSection=true;
+            }
 
-document.querySelector(".gallery-section").scrollIntoView({
-behavior:"smooth"
-});
+            return;
+        }
 
-};
+        typingText.textContent += message[i];
+        i++;
 
-}
+        setTimeout(() => {
 
-}
+            letterCard.scrollTo({
+                top: letterCard.scrollHeight,
+                behavior: "auto"
+            });
 
-}
+            typing();
 
-typing();
+        }, 45);
 
-}
+    } // <-- tutup function typing
 
+    typing();
+
+} // <-- tutup function typeLetter
 //========== LOCK SCROLL ==========
 const letterSection=document.querySelector(".letter-section");
 const gallerySection=document.querySelector(".gallery-section");
@@ -215,15 +219,19 @@ e.preventDefault();
 //========== BACKGROUND ==========
 const background=document.querySelector(".background");
 
-window.addEventListener("mousemove",e=>{
+if(window.innerWidth > 768){
 
-let x=(e.clientX/window.innerWidth-.5)*10;
-let y=(e.clientY/window.innerHeight-.5)*10;
+    window.addEventListener("mousemove",e=>{
 
-background.style.transform=
-`scale(1.05) translate(${x}px,${y}px)`;
+        const x = (e.clientX / window.innerWidth - 0.5) * 10;
+        const y = (e.clientY / window.innerHeight - 0.5) * 10;
 
-});
+        background.style.transform =
+            `scale(1.05) translate(${x}px, ${y}px)`;
+
+    });
+
+}
 
 window.addEventListener("resize",()=>{
 

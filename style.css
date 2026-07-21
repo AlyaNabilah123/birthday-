@@ -13,6 +13,8 @@
 
 html{
     scroll-behavior:smooth;
+    overflow-x:hidden;
+    overscroll-behavior:none;
 }
 
 body{
@@ -20,6 +22,7 @@ body{
     background:#000;
     color:white;
     overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
 }
 
 /* ===============================
@@ -35,8 +38,38 @@ BACKGROUND
     url("assets/spiderman-bg.jpg");
     background-size:cover;
     background-position:center;
-    animation:bgZoom 20s infinite alternate;
     z-index:-10;
+}
+
+@media(max-width:768px){
+
+.background{
+
+animation:none;
+
+transform:scale(1.05);
+
+}
+
+}
+
+#typingText{
+
+word-break:break-word;
+
+overflow-wrap:break-word;
+
+}
+
+.hero-content,
+.letter-card,
+.memory-photo,
+.background{
+
+transform:translateZ(0);
+
+backface-visibility:hidden;
+
 }
 
 @keyframes bgZoom{
@@ -368,9 +401,16 @@ opacity:1
 
 /* CARD */
 .letter-card{
+
 max-height:85vh;
 overflow-y:auto;
+
 scroll-behavior:smooth;
+
+overscroll-behavior:contain;
+
+-webkit-overflow-scrolling:touch;
+
 border-radius:35px;
 border:
 1px solid rgba(255,255,255,.2);
@@ -938,6 +978,7 @@ animation:none;
 
 .cursor-glow{
 display:none;
+}
 
 .hero::before{
 display:none;
@@ -1067,5 +1108,4 @@ transform:translateY(6px);
 
 }
 
-}
 }
