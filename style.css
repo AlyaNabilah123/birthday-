@@ -1,0 +1,1071 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+:root{
+    --red:#C1121F;
+    --gold:#FFD166;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===============================
+BACKGROUND
+================================ */
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.85)),
+    url("assets/spiderman-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    animation:bgZoom 20s infinite alternate;
+    z-index:-10;
+}
+
+@keyframes bgZoom{
+from{
+    transform:scale(1);
+}
+
+to{
+    transform:scale(1.1);
+}
+}
+
+/* ===============================
+OVERLAY
+================================ */
+.overlay{
+position:fixed;
+inset:0;
+background:
+radial-gradient(
+circle,
+transparent,
+rgba(0,0,0,.6));
+z-index:-5;
+}
+
+/* ===============================
+LOADER
+================================ */
+#loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+transition:1s;
+}
+
+.loader-logo{
+font-size:80px;
+animation:spin 3s linear infinite;
+}
+
+@keyframes spin{
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+}
+
+/* ===============================
+SECTION GLOBAL
+================================ */
+section{
+width:100%;
+min-height:100vh;
+padding:80px 8%;
+}
+
+/* ===============================
+HERO
+================================ */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
+
+.hero-content{
+max-width:900px;
+width:100%;
+padding:60px 40px;
+border-radius:30px;
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.12),
+rgba(255,0,0,.05));
+backdrop-filter:blur(15px);
+border:
+1px solid rgba(255,255,255,.15);
+box-shadow:
+0 30px 80px rgba(0,0,0,.5);
+animation:fadeUp 1.5s;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* ===============================
+TEXT
+================================ */
+.subtitle{
+font-size:13px;
+letter-spacing:6px;
+color:#ddd;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:90px;
+line-height:1;
+text-shadow:
+0 0 20px white,
+0 0 50px red;
+}
+
+.hero h2{
+font-size:35px;
+margin:25px 0;
+color:var(--gold);
+}
+
+.description{
+font-size:18px;
+line-height:2;
+color:#eee;
+}
+
+/* ===============================
+BUTTON OPEN
+================================ */
+#openGift{
+margin-top:45px;
+padding:18px 60px;
+border-radius:50px;
+border:2px solid white;
+background:
+linear-gradient(
+45deg,
+#8b0000,
+#C1121F
+);
+color:white;
+cursor:pointer;
+letter-spacing:4px;
+font-size:15px;
+transition:.4s;
+box-shadow:
+0 0 30px rgba(193,18,31,.7);
+}
+#openGift:hover{
+transform:translateY(-5px)
+scale(1.05);
+}
+
+/* ===============================
+CURSOR LIGHT
+================================ */
+.cursor-glow{
+position:fixed;
+width:220px;
+height:220px;
+border-radius:50%;
+background:
+radial-gradient(
+circle,
+rgba(255,0,0,.3),
+transparent 70%
+);
+filter:blur(20px);
+pointer-events:none;
+z-index:5;
+}
+
+/* ===============================
+WEB
+================================ */
+.web-left,
+.web-right{
+position:fixed;
+top:0;
+width:220px;
+opacity:.2;
+z-index:2;
+}
+
+.web-left{
+left:0;
+}
+.web-right{
+right:0;
+transform:scaleX(-1);
+}
+
+/* ===============================
+SCROLLBAR
+================================ */
+::-webkit-scrollbar{
+width:8px;
+}
+::-webkit-scrollbar-thumb{
+background:#C1121F;
+border-radius:20px;
+}
+
+/* ===============================
+TABLET
+================================ */
+@media(max-width:900px){
+.hero h1{
+font-size:60px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero-content{
+padding:40px 25px;
+}
+}
+
+/* ===============================
+PHONE
+================================ */
+@media(max-width:600px){
+section{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
+.description{
+font-size:14px;
+line-height:1.8;
+}
+
+.subtitle{
+font-size:10px;
+letter-spacing:3px;
+}
+
+.hero-content{
+padding:35px 20px;
+border-radius:20px;
+}
+
+#openGift{
+padding:15px 35px;
+font-size:12px;
+}
+.web-left,
+.web-right{
+width:100px;
+}
+}
+
+/* =====================================
+   LOVE LETTER PREMIUM SECTION
+===================================== */
+.letter-section{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding:120px 8%;
+min-height:auto;
+}
+
+/* BACKGROUND LOVE */
+.letter-section::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(60,0,10,.85)),
+url("assets/love-bg.jpg");
+background-size:cover;
+background-position:center;
+filter:brightness(.8);
+z-index:-2;
+}
+
+/* RED LIGHT EFFECT */
+.letter-section::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:
+radial-gradient(
+circle,
+rgba(193,18,31,.35),
+transparent 70%
+);
+filter:blur(70px);
+animation:loveGlow 5s infinite alternate;
+z-index:-1;
+}
+
+@keyframes loveGlow{
+from{
+transform:translate(-100px,-50px);
+opacity:.5;
+}
+
+to{
+transform:translate(100px,50px);
+opacity:1
+}
+}
+
+/* CARD */
+.letter-card{
+max-height:85vh;
+overflow-y:auto;
+scroll-behavior:smooth;
+border-radius:35px;
+border:
+1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(20px);
+box-shadow:
+0 30px 80px rgba(0,0,0,.6);
+animation:
+letterAppear 1.5s ease;
+}
+
+@keyframes letterAppear{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FOTO + TEXT */
+.letter-content{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+/* FOTO */
+.letter-photo{
+width:220px;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:
+5px solid white;
+transform:rotate(-6deg);
+box-shadow:
+0 0 30px white,
+0 0 80px rgba(193,18,31,.8);
+transition:.5s;
+}
+
+.letter-photo:hover{
+transform:
+rotate(0deg)
+scale(1.05);
+}
+
+/* TEXT AREA */
+.letter-text{
+flex:1;
+}
+
+.letter-title{
+display:block;
+text-align:center;
+font-size:22px;
+letter-spacing:5px;
+color:var(--gold);
+margin-bottom:30px;
+font-family:'Playfair Display',serif;
+text-shadow:
+0 0 20px #FFD166;
+}
+
+/* TYPING TEXT */
+#typingText{
+font-size:19px;
+line-height:2;
+color:#fff;
+white-space:pre-line;
+text-shadow:
+0 0 10px rgba(255,255,255,.2);
+}
+
+/* CURSOR TULISAN */
+#typingText::after{
+content:"|";
+animation:
+cursorBlink .8s infinite;
+color:#FFD166;
+}
+
+@keyframes cursorBlink{
+50%{
+opacity:0;
+}
+}
+
+/* BUTTON LANJUT */
+#continueMemory{
+margin-top:40px;
+padding:15px 45px;
+border-radius:50px;
+border:2px solid #FFD166;
+background:
+linear-gradient(
+45deg,
+#8b0000,
+#C1121F
+);
+color:white;
+cursor:pointer;
+letter-spacing:3px;
+transition:.4s;
+}
+#continueMemory:hover{
+transform:scale(1.1);
+box-shadow:
+0 0 40px red;
+}
+
+/* ============================
+   MOBILE LOVE LETTER
+============================ */
+@media(max-width:900px){
+.letter-card{
+padding:35px 25px;
+}
+
+.letter-content{
+flex-direction:column;
+text-align:center;
+}
+
+.letter-photo{
+width:170px;
+height:220px;
+}
+
+#typingText{
+font-size:17px;
+}
+}
+
+@media(max-width:600px){
+.letter-section{
+padding:40px 20px;
+}
+
+.letter-card{
+padding:30px 20px;
+border-radius:25px;
+}
+
+.letter-photo{
+width:140px;
+height:180px;
+}
+
+.letter-title{
+font-size:17px;
+letter-spacing:3px;
+}
+
+#typingText{
+font-size:15px;
+line-height:1.8;
+}
+
+#continueMemory{
+padding:12px 30px;
+font-size:12px;
+}
+}
+
+/* ==========================
+BUTTON START SURPRISE
+========================== */
+#surpriseButton{
+margin-top:30px;
+padding:15px 45px;
+border-radius:50px;
+border:2px solid var(--gold);
+background:
+linear-gradient(
+45deg,
+#8b0000,
+#C1121F
+);
+color:white;
+cursor:pointer;
+letter-spacing:3px;
+position:relative;
+z-index:50;
+box-shadow:
+0 0 30px red;
+}
+
+/* =====================================
+        FINAL ENDING STRAWBERRY 🍓
+===================================== */
+.ending{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+/* BACKGROUND ENDING */
+.ending::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.85)
+),
+url("assets/galaxy.jpg");
+background-size:cover;
+background-position:center;
+filter:blur(6px);
+transform:scale(1.15);
+z-index:-1;
+}
+
+/* LIGHT EFFECT */
+.ending::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:
+radial-gradient(
+circle,
+rgba(255,0,80,.35),
+transparent 70%
+);
+filter:blur(80px);
+animation:endGlow 5s infinite alternate;
+}
+
+@keyframes endGlow{
+from{
+transform:scale(.8);
+}
+
+to{
+transform:scale(1.3);
+}
+}
+
+/* TEXT ENDING */
+.ending h1{
+font-family:'Playfair Display',serif;
+font-size:90px;
+text-transform:uppercase;
+z-index:20;
+text-shadow:
+0 0 20px white,
+0 0 60px red;
+animation:titleEnd 3s infinite alternate;
+}
+
+@keyframes titleEnd{
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.05);
+}
+}
+
+.ending p{
+font-size:22px;
+color:#ddd;
+margin:20px;
+z-index:20;
+}
+
+.ending h3{
+font-size:45px;
+color:#FFD166;
+z-index:20;
+text-shadow:
+0 0 30px gold;
+}
+
+/* =====================================
+ STRAWBERRY CONTAINER
+===================================== */
+#strawberry-container{
+position:absolute;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:10;
+}
+
+/* STRAWBERRY */
+.final-strawberry{
+position:absolute;
+width:280px;
+opacity:0;
+filter:
+drop-shadow(
+0 0 25px red
+);
+animation:
+berryExplosion 4s ease forwards;
+}
+
+@keyframes berryExplosion{
+0%{
+opacity:0;
+transform:
+translate(-50%,-50%)
+scale(.1)
+rotate(0);
+}
+20%{
+opacity:1;
+}
+100%{
+opacity:0;
+transform:
+translate(
+calc(-50% + var(--x)),
+calc(-50% + var(--y))
+)
+scale(1.3)
+rotate(var(--r));
+}
+}
+
+/* =====================================
+ MUSIC BUTTON
+===================================== */
+#musicButton{
+position:fixed;
+right:30px;
+bottom:30px;
+width:65px;
+height:65px;
+border-radius:50%;
+border:2px solid white;
+background:
+linear-gradient(
+45deg,
+#8b0000,
+#C1121F
+);
+color:white;
+font-size:25px;
+cursor:pointer;
+z-index:99999;
+box-shadow:
+0 0 35px red;
+transition:.4s;
+}
+
+#musicButton:hover{
+transform:scale(1.15);
+box-shadow:
+0 0 60px red;
+}
+
+/* =====================================
+ MOBILE ENDING
+===================================== */
+@media(max-width:600px){
+.ending h1{
+font-size:42px;
+line-height:1.2;
+}
+
+.ending p{
+font-size:16px;
+}
+
+.ending h3{
+font-size:28px;
+}
+
+.final-strawberry{
+width:120px;
+}
+#musicButton{
+width:55px;
+height:55px;
+right:20px;
+bottom:20px;
+font-size:20px;
+}
+}
+
+/* ===================================
+   FINAL MOBILE OPTIMIZATION
+===================================== */
+/* CEGAH HORIZONTAL SCROLL */
+html,
+body{
+max-width:100%;
+overflow-x:hidden;
+}
+
+/* FOTO TIDAK KELUAR LAYAR */
+img{
+max-width:100%;
+}
+
+/* ==============================
+   IPHONE / SMARTPHONE
+============================== */
+@media(max-width:600px){
+/* HERO */
+.hero{
+height:auto;
+min-height:100vh;
+padding:20px;
+}
+
+.hero-content{
+margin-top:20px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero h2{
+font-size:20px;
+}
+
+.description{
+font-size:13px;
+}
+
+/* LOVE LETTER */
+.letter-section{
+min-height:100vh;
+padding:30px 15px;
+}
+
+.letter-card{
+width:100%;
+padding:25px 18px;
+}
+
+.letter-content{
+gap:20px;
+}
+
+#typingText{
+font-size:14px;
+line-height:1.8;
+}
+
+/* MEMORY SECTION */
+.memory-surprise{
+height:100vh;
+min-height:650px;
+}
+
+.memory-title h2{
+font-size:30px;
+}
+
+.memory-title p{
+padding:0 20px;
+}
+
+#surpriseButton{
+padding:12px 25px;
+font-size:12px;
+}
+
+/* FOTO MEMORY */
+.memory-photo{
+width:85px;
+height:120px;
+border-width:3px;
+}
+
+/* ================================
+   MEMORY PHOTO ZOOM FIX
+================================ */
+.memory-scroll img{
+    position:relative;
+    transition:.5s ease;
+}
+
+.memory-scroll img.active{
+    position:fixed !important;
+    left:50% !important;
+    top:50% !important;
+    transform:
+    translate(-50%,-50%)
+    scale(2);
+    width:260px;
+    height:360px;
+    z-index:99999 !important;
+    border:5px solid white;
+    box-shadow:
+    0 0 40px white,
+    0 0 100px red;
+}
+
+/* buat layar belakang gelap saat zoom */
+.zoom-overlay{
+position:fixed;
+inset:0;
+background:
+rgba(0,0,0,.75);
+backdrop-filter:blur(8px);
+z-index:99990;
+}
+
+/* ENDING */
+.ending{
+padding:30px 20px;
+}
+
+.ending h1{
+font-size:38px;
+}
+.ending h3{
+font-size:24px;
+}
+
+/* MUSIC */
+#musicButton{
+width:50px;
+height:50px;
+font-size:18px;
+bottom:20px;
+right:20px;
+}
+}
+
+/* =====================================
+   IPHONE 12 / 13 / 14 FIX
+===================================== */
+@media(min-width:375px) and (max-width:430px){
+.hero h1{
+font-size:42px;
+}
+
+.memory-photo{
+width:90px;
+height:130px;
+}
+
+.letter-photo{
+width:130px;
+height:170px;
+}
+}
+
+/* =====================================
+   REDUCE ANIMATION HP LEMAH
+===================================== */
+@media(max-width:600px){
+.background{
+animation:none;
+}
+
+.cursor-glow{
+display:none;
+
+.hero::before{
+display:none;
+}
+
+.marvel-particle{
+opacity:.4;
+}
+}
+/*==============================
+CONTINUE JOURNEY
+==============================*/
+.scroll-guide{
+display:none;
+margin-top:35px;
+text-align:center;
+cursor:pointer;
+color:#FFD166;
+font-size:20px;
+font-weight:600;
+letter-spacing:2px;
+transition:.4s;
+animation:guideFloat 1.8s infinite;
+user-select:none;
+}
+
+.scroll-guide.show{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+.scroll-guide:hover{
+color:#fff;
+transform:scale(1.08);
+text-shadow:0 0 15px #FFD166;
+}
+
+.scroll-guide::before{
+content:"⬇";
+font-size:28px;
+animation:arrowBounce 1s infinite;
+}
+
+@keyframes guideFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(8px);
+}
+}
+
+@keyframes arrowBounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(6px);
+}
+}
+
+/* =====================================
+   FALLING SUNFLOWER EFFECT 🌻
+===================================== */
+
+.flower{
+
+    position:fixed;
+
+    top:-80px;
+
+    z-index:50;
+
+    pointer-events:none;
+
+    opacity:.9;
+
+    animation-name:flowerFall;
+
+    animation-timing-function:linear;
+
+    animation-fill-mode:forwards;
+
+}
+
+
+/* ANIMASI JATUH */
+
+@keyframes flowerFall{
+
+0%{
+
+    transform:
+    translateY(-100px)
+    rotate(0deg);
+
+    opacity:0;
+
+}
+
+
+10%{
+
+    opacity:1;
+
+}
+
+
+50%{
+
+    transform:
+    translateY(50vh)
+    rotate(180deg);
+
+}
+
+
+100%{
+
+    transform:
+    translateY(120vh)
+    rotate(360deg);
+
+    opacity:0;
+
+}
+
+}
+}
